@@ -13,15 +13,11 @@
   <form>
     <div class="form-group">
     <label>First name</label>
-    <input type="text" class="form-control" id="first-name" placeholder="first name">
+    <input type="text" class="form-control" id="nombrepunto" placeholder="nombre">
   </div>
   <div class="form-group">
     <label>Last name</label>
-    <input type="text" class="form-control" id="last-name"placeholder="last name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email">
+    <input type="text" class="form-control" id="urlimagen"placeholder="URL">
   </div>
   <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -36,7 +32,7 @@
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -44,19 +40,19 @@
       <td>1</td>
       <td>Mark</td>
       <td>Otto</td>
-      <td>@mdo</td>
+      
     </tr>
     <tr>
       <td>2</td>
       <td>Jacob</td>
       <td>Thornton</td>
-      <td>@fat</td>
+      
     </tr>
     <tr>
       <td>3</td>
       <td>Larry</td>
       <td>the Bird</td>
-      <td>@twitter</td>
+      
     </tr>
   </tbody>
 </table>
@@ -94,16 +90,16 @@
 
   // write data
   submit.addEventListener('click',(e) => {
-    var firstName = document.getElementById('first-name').value;  
-    var lastName = document.getElementById('last-name').value;  
-    var email = document.getElementById('email').value;  
+    var nombrepunto = document.getElementById('nombrepunto').value;  
+    var urlimagen = document.getElementById('urlimagen').value;  
+     
 
-    const userId = push(child(ref(database), 'users')).key;
+    const PuntoID = push(child(ref(database), 'Punto')).key;
    
-    set(ref(database, 'users/' + userId), {
-    firstName: firstName,
-    lastName: lastName,
-    email : email
+    set(ref(database, 'Punto/' + PuntoID), {
+    nombrepunto: nombrepunto,
+    urlimagen: urlimagen
+   
    });
    alert('saved');
   });
@@ -113,7 +109,7 @@
 
     $('#dataTbl td').remove();
     var rowNum = 0; 
-    const dbRef = ref(database, 'users/');
+    const dbRef = ref(database, 'Punto/');
 
     onValue(dbRef, (snapshot) => {
       snapshot.forEach((childSnapshot) => {
@@ -121,7 +117,7 @@
       const childData = childSnapshot.val();
       // ...
       rowNum += 1; 
-      var row = "<tr><td>" + rowNum + "</td><td>" + childData.firstName + "</td><td>" + childData.lastName + "</td><td>" + childData.email + "</td></tr>"
+      var row = "<tr><td>" + rowNum + "</td><td>" + childData.nombrepunto + "</td><td>" + childData.urlimagen + "</td><td>"
 
       $(row).appendTo('#dataTbl');
       

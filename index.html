@@ -1,131 +1,18 @@
-<html>
-<head>
-<title>firebase editable table </title>
+<!-- A button to open the popup form -->
+<button class="open-button" onclick="openForm()">Open Form</button>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- The form -->
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
 
-</head>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
 
-<body>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
 
-<div class="col-md-6">
-  <form>
-    <div class="form-group">
-    <label>First name</label>
-    <input type="text" class="form-control" id="nombrepunto" placeholder="nombre">
-  </div>
-  <div class="form-group">
-    <label>Last name</label>
-    <input type="text" class="form-control" id="urlimagen"placeholder="URL">
-  </div>
-  <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-</form>
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
 </div>
-
-  <button type="submit" id="getData" class="btn btn-primary">Search data</button>
-
-<div class="col-md-6">
-<table class="table table-striped" id='dataTbl'>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-</body>
-</html>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-  import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
-
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBpVkqcYCsQasMabKZxO4GfIAWCPQTEnG8",
-    authDomain: "pruebaingresar.firebaseapp.com",
-    projectId: "pruebaingresar",
-    storageBucket: "pruebaingresar.appspot.com",
-    messagingSenderId: "1028862411233",
-    appId: "1:1028862411233:web:fd761b376350f40724d2a0"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  
-  // Get a reference to the database service
-  const database = getDatabase(app);
-
-  // write data
-  submit.addEventListener('click',(e) => {
-    var nombrepunto = document.getElementById('nombrepunto').value;  
-    var urlimagen = document.getElementById('urlimagen').value;  
-     
-
-    const PuntoID = push(child(ref(database), 'Punto')).key;
-   
-    set(ref(database, 'Punto/' + PuntoID), {
-    nombrepunto: nombrepunto,
-    urlimagen: urlimagen
-   
-   });
-   alert('saved');
-  });
-
-  // read data
-  getData.addEventListener('click',(e) => {
-
-    $('#dataTbl td').remove();
-    var rowNum = 0; 
-    const dbRef = ref(database, 'Punto/');
-
-    onValue(dbRef, (snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-      // ...
-      rowNum += 1; 
-      var row = "<tr><td>" + rowNum + "</td><td>" + childData.nombrepunto + "</td><td>" + childData.urlimagen + "</td><td>"
-
-      $(row).appendTo('#dataTbl');
-      
-      });
-    }, {
-       onlyOnce: true
-    });
-
-
-  });
-</script>

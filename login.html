@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Museo Web</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="assets/icon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+		<style>
+		/* Button used to open the contact form - fixed at the bottom of the page */
+		.open-button {
+		  background-color: gray;
+		  color: white;
+		  padding: 16px 20px;
+		  border: none;
+		  cursor: pointer;
+		  opacity: 0.8;
+		  position: fixed;
+		  bottom: 23px;
+		  right: 28px;
+		  width: 280px;
+		  border-radius: 5px;
+		}
+
+		/* The popup form - hidden by default */
+		.form-popup {
+		  display: none;
+		  position: relative;
+		left:810px;
+		top:90px;
+		right:-60px;
+
+		 
+		  z-index: 9;
+		}
+
+		/* Add styles to the form container */
+		.form-container {
+		  max-width: 300px;
+		  padding: 10px;
+		  background-color: white;
+		}
+
+		/* Full-width input fields */
+		.form-container input[type=text], .form-container input[type=password] {
+		  width: 100%;
+		  padding: 15px;
+		  margin: 5px 0 22px 0;
+		  border: none;
+		  background: #f1f1f1;
+		}
+
+		/* When the inputs get focus, do something */
+		.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+		  background-color: #ddd;
+		  outline: none;
+		}
+
+		/* Set a style for the submit/login button */
+		.form-container .btn {
+		  background-color: #04AA6D;
+		  color: white;
+		  padding: 16px 20px;
+		  border: none;
+		  cursor: pointer;
+		  width: 100%;
+		  margin-bottom:10px;
+		  opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+		  background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+		  opacity: 1;
+		}
+
+		</style>
+    
+    </head>
+    <body id="pagina-inicial">
+	
+	
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#pagina-inicial">Museo Web</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#pagina-inicial">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Puntos de Interes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pagina-contacto">Contacto</a></li>
+			 <li class="nav-item"><a class="nav-link" href="#pagina-ingresar">Ingresar Punto Interes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" id="cabeza" >
+		
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center" >
+                        <h1 class="mx-auto my-0 text-uppercase">Museo Web</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Museo picadisimo.</h2>
+                        <a class="btn btn-primary " href="#projects">Ver Puntos</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+
+       <!-- Puntos Interes-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/sir.png" alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Mauricio El Tebano</h4>
+                            <p class="text-black-50 mb-0">aaa</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/miniarlecchino.jpg" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-righ">
+                                    <h4 class="text-white">Arlecchino</h4>
+                                    <p class="mb-0 text-white-50">caaaaapo.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/henrii.jpg" alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Henri de la Rochejaquelain</h4>
+                                    <p class="mb-0 text-white-50">capo</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	<h1 class="mx-auto my-0 text-uppercase text-center" id="labelingresar" >Ingresar Punto de Interes</h1><br><br>
+	<div class="col-md-6" id="ingresarpuntito" >
+	
+	  <form style="width:100%;margin: 2px 477px;">
+	    <div class="mx-auto my-0 text-uppercase text-center">
+	    <label>Nombre</label>
+	    <input type="text" required minlength="4" maxlength="8" size="10" class="form-control" id="punt_nombre"  placeholder="nombre">
+	  </div>
+	  <div class="mx-auto my-0 text-uppercase text-center">
+	    <label>Descripcion</label>
+	    <input type="text" required minlength="4" maxlength="8" size="10" class="form-control" id="punt_descripcion"placeholder="Descripcion">
+	  </div>
+	    <div class="mx-auto my-0 text-uppercase text-center">
+	    <label>Autor</label>
+	    <input type="text" required minlength="4" maxlength="8" size="10" class="form-control" id="punt_autor" placeholder="Autor">
+	  </div>
+	    <div class="mx-auto my-0 text-uppercase text-center">
+	    <label>Imagen</label>
+	    <input type="text" required minlength="4" maxlength="8" size="10" class="form-control" id="punt_imagen" placeholder="URL de imagen">
+	  </div>
+	    <div class="mx-auto my-0 text-uppercase text-center">
+	    <label>Miniatura</label>
+	    <input type="text" required minlength="4" maxlength="8" size="10" class="form-control" id="punt_miniatura" placeholder="URL de miniatura">
+	  </div>
+	  <button type="submit" style="width:100%;margin-left:auto;margin-right:auto;display:block;margin-top:2%;margin-bottom:0%" id="submit" class="btn btn-primary">Ingresar</button> 
+	</form>
+
+
+	</div>
+
+	  <button type="submit" style="width:30%;margin-left:auto;margin-right:auto;display:block;margin-top:2%;margin-bottom:0%" id="getData" class="btn btn-primary">Buscar</button>
+
+	<div class="col-md-6">
+	<table class="table table-striped align-items-center justify-content-center " id='dataTbl' style="padding:20px;margin-left:50%;margin-top:5%;margin-bottom:50%; border:1px solid black;margin-right:auto;" align="center">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Nombre</th>
+	      <th scope="col">Autor</th>
+	      <th scope="col">Descripción</th>
+	      <th scope="col">Imagen</th>
+		<th scope="col">Miniatura</th>
+	    </tr>
+	  </thead>
+	</table>
+	</div>
+
+	<h1 class="mx-auto my-0 text-uppercase text-center" id="textocontacto" >Contacto</h1>				
+        <!-- contacto-->
+        <section class="contact-section bg-black" id="pagina-contacto">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Dirección</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">+</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Teléfono</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2022</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>    
+    </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getDatabase, set, ref ,push, child, onValue, update} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAVHLsWqGayikm_IyXFlqwSow0b6dM9Dkg",
+  authDomain: "bdmuseoapp.firebaseapp.com",
+  databaseURL: "https://bdmuseoapp-default-rtdb.firebaseio.com",
+  projectId: "bdmuseoapp",
+  storageBucket: "bdmuseoapp.appspot.com",
+  messagingSenderId: "110209157558",
+  appId: "1:110209157558:web:faa2b341bd35a4e606d917"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  // Get a reference to the database service
+  const database = getDatabase(app);
+	
+  // write data
+  submit.addEventListener('click',(e) => {
+    var punt_nombre = document.getElementById('punt_nombre').value;
+    var punt_autor = document.getElementById('punt_autor').value;
+    var punt_descripcion = document.getElementById('punt_descripcion').value;  
+    var punt_imagen = document.getElementById('punt_imagen').value;
+    var punt_miniatura = document.getElementById('punt_miniatura').value;
+
+    const PuntoID = push(child(ref(database), 'Puntos')).key;
+   
+    set(ref(database, 'Puntos/' + PuntoID), {
+    punt_nombre: punt_nombre,
+    punt_autor: punt_autor,
+    punt_descripcion: punt_descripcion,
+    punt_imagen: punt_imagen,
+    punt_miniatura: punt_miniatura
+   });
+   alert('saved');
+  });
+
+  // read data
+  getData.addEventListener('click',(e) => {
+
+    $('#dataTbl td').remove();
+    var rowNum = 0; 
+    const dbRef = ref(database, 'Puntos/');
+
+    onValue(dbRef, (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+      const childKey = childSnapshot.key;
+      const childData = childSnapshot.val();
+      // ...
+      rowNum += 1; 
+      var row = "<tr><td>" + rowNum + "</td><td>" + childData.punt_nombre + "</td><td>" + childData.punt_autor + "</td><td>" + childData.punt_descripcion + "</td><td>" + childData.punt_imagen + "</td><td>" + childData.punt_miniatura + "</td><td>"
+
+      $(row).appendTo('#dataTbl');
+      
+      });
+    }, {
+       onlyOnce: true
+    });
+
+	updateData.addEventListener('click', (e) => {
+	//update data
+        update(ref(database, 'Puntos/' + punt_nombre), {
+   		 punt_autor: punt_autor,
+   		 punt_descripcion: punt_descripcion,
+   		 punt_imagen: punt_imagen,
+   		 punt_miniatura: punt_miniatura
+        }).then(() => {
+            // Data saved successfully!
+            alert('data updated');
+        })
+            .catch((error) => {
+                // The write failed...
+                alert(error);
+            });
+    });
+
+  // delete data
+removeData.addEventListener('click',(e) => {
+            var punt_nombre = document.getElementById('punt_nombre').value;
+
+            remove(ref(database, 'Puntos/' + punt_nombre));
+            alert('removed');
+        });
+
+  });
+sighUp.addEventListener('click',(e) => {
+const auth = getAuth();
+	e.preventDefault();
+  var username = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+     // Signed in 
+      const user = userCredential.user;
+
+      set(ref(database, 'users/' + user.uid),{
+          username: username,
+          email: email
+      })
+
+      alert('Usuario registrado correctamente, Bienvenido!');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    // ..
+    });
+
+});
+
+ login.addEventListener('click',(e)=>{
+	e.preventDefault();
+   var email = document.getElementById('email').value;
+   var password = document.getElementById('password').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        const dt = new Date();
+         update(ref(database, 'users/' + user.uid),{
+          last_login: dt,
+        })
+
+         alert('Inicio sesión correctamente, Gracias!');
+			
+
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+  });
+
+ });
+
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    //bla bla bla
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    //bla bla bla
+  }
+});
+
+logout.addEventListener('click',(e)=>{
+
+   signOut(auth).then(() => {
+     // Sign-out successful.
+     alert('Usted cerró su sesión, Gracias por su servicio!');
+   }).catch((error) => {
+     // An error happened.
+     const errorCode = error.code;
+     const errorMessage = error.message;
+
+        alert(errorMessage);
+   });
+	
+
+});
+</script>
